@@ -22,7 +22,7 @@ const Review = () => {
                         <p className='text-white'>Student's Completed <br /> Course Successfully</p>
                     </div>
                 </div>
-                <div className="xl:col-span-2 bg-white rounded-lg overflow-hidden">
+                <div className="xl:col-span-2 bg-black rounded-lg overflow-hidden">
                     <Slider />
                 </div>
             </div>

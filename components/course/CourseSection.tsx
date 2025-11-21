@@ -17,33 +17,26 @@ const CourseSection = () => {
 
   const observer = useRef<IntersectionObserver | null>(null);
 
-  const categoryMap: Record<string, string> = {
-    Programming: "Technical",
-    Hacking: "Technical",
-    Software: "Technical",
-    Design: "Non-Tech",
-    Medical: "Medical",
-  };
+  const filterOptions = ["All", "Technology", "Business", "Medical", "Hospitality", "Skilled Labor"];
 
-  const filterOptions = ["All", "Technical", "Non-Tech", "Medical"];
-
-  // Filtered courses
+  // Filter courses based on selected category and search term
   const filteredCourses = React.useMemo(() => {
     return coursesData.filter((course) => {
+      // Check category
       const categoryMatch =
-        selectedCategory === "All" ||
-        categoryMap[course.category] === selectedCategory;
+        selectedCategory === "All" || course.category === selectedCategory;
 
+      // Check search term
       const searchMatch =
         course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        course.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        course.teacher.toLowerCase().includes(searchTerm.toLowerCase()) ||
         course.category.toLowerCase().includes(searchTerm.toLowerCase());
 
       return categoryMatch && searchMatch;
     });
   }, [selectedCategory, searchTerm]);
 
-  // Load first page when filters change
+  // Reset visible courses when filters/search change
   useEffect(() => {
     const firstBatch = filteredCourses.slice(0, COURSES_PER_PAGE);
     setVisibleCourses(firstBatch);
@@ -51,7 +44,7 @@ const CourseSection = () => {
     setHasMore(filteredCourses.length > firstBatch.length);
   }, [filteredCourses]);
 
-  // Load more pages
+  // Load more courses on scroll
   useEffect(() => {
     if (page === 1) return;
 
@@ -68,7 +61,7 @@ const CourseSection = () => {
     }, 300);
   }, [page, filteredCourses]);
 
-  // Intersection Observer
+  // Intersection Observer for infinite scroll
   const lastCourseRef = useCallback(
     (node: HTMLDivElement | null) => {
       if (isLoading || !hasMore) return;
@@ -89,7 +82,7 @@ const CourseSection = () => {
   return (
     <section className="py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Search + Filters */}
         <div className="flex flex-col lg:flex-row gap-8 mb-12 items-center justify-between">
           <input
@@ -108,10 +101,9 @@ const CourseSection = () => {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all 
-                  ${
-                    selectedCategory === cat
-                      ? "bg-violet-600 text-white shadow-lg"
-                      : "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100"
+                  ${selectedCategory === cat
+                    ? "bg-violet-600 text-white shadow-lg"
+                    : "bg-white text-gray-800 border border-gray-300 hover:bg-gray-100"
                   }`}
               >
                 {cat}

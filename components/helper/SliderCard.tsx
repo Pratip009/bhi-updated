@@ -1,37 +1,29 @@
-import Image from 'next/image'
-import React from 'react'
-import { FaStar } from 'react-icons/fa'
-
+import React from 'react';
 
 type Props = {
-    name: string,
-    role: string,
-    image: string,
-    message: string
-}
+    video: string,
+};
 
-const SliderCard = ({ name, role, image, message }: Props) => {
+const SliderCard = ({ video }: Props) => {
     return (
-        <div className='flex flex-wrap sm:flex-nowrap items-center space-x-10'>
-            <div className='h-full w-full'>
-                <Image src={image} alt={name} width={350} height={350} className='w-full h-full' />
-            </div>
-            <div className="mt-6 mb-7">
-                <div className="flex items-center">
-                    <FaStar className='xl:w-7 xl:h-7 md:w-5 md:h-5 w-4 h-4 text-yellow-600' />
-                    <FaStar className='xl:w-7 xl:h-7 md:w-5 md:h-5 w-4 h-4 text-yellow-600' />
-                    <FaStar className='xl:w-7 xl:h-7 md:w-5 md:h-5 w-4 h-4 text-yellow-600' />
-                    <FaStar className='xl:w-7 xl:h-7 md:w-5 md:h-5 w-4 h-4 text-yellow-600' />
-                    <FaStar className='xl:w-7 xl:h-7 md:w-5 md:h-5 w-4 h-4 text-yellow-600' />
-                </div>
-                <p className='mt-6 text-gray-800 w-[95%] md:w-[80%] text-xs md:text-sm lg:text-base font-semibold text-opacity-65'>{message}</p>
-                <div className="mt-7">
-                    <h1 className='text-xl text-black font-semibold'>{name}</h1>
-                    <p className='text-lg text-black text-opacity-60'>{role}</p>
+        <div className="w-full bg-black"> {/* or any color you want */}
+            <div className='flex justify-center items-center w-full h-full py-8'>
+                <div className='w-full max-w-2xl'>
+                    <video
+                        src={video}
+                        controls
+                        muted
+                        className='w-full h-64 md:h-80 lg:h-96 rounded-lg shadow-lg object-contain bg-black'
+                        preload="metadata"
+                        poster="/images/thumb.jpg"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
-    )
-}
 
-export default SliderCard
+    );
+};
+
+export default SliderCard;

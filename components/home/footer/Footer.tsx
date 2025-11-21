@@ -4,7 +4,7 @@ import { FaEnvelopeOpenText, FaFacebookF, FaInstagram, FaLinkedin, FaMapMarkerAl
 
 const Footer = () => {
     return (
-        <div className='pt-20 pb-12 bg-black'>
+        <footer className='pt-20 pb-12 bg-black'>
             <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-8 border-b-[1.5px] border-white border-opacity-20">
                 <div className="">
                     <Image src="/images/logo.png" alt="Logo" width={50} height={50} className='mb-4' />
@@ -52,7 +52,7 @@ const Footer = () => {
 
             </div>
             <p className='text-base text-center mt-4 text-white text-opacity-70'>@2025 Bright Horizon Institute. All rights reserved.</p>
-        </div>
+        </footer>
     )
 }
 
