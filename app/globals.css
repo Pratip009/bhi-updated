@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav__link {
+    @apply relative text-xl w-fit block after:block after:content-[''] font-semibold after:absolute after:h-[3px] after:bg-yellow-400 text-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-right;
+  }
+  .button__cls {
+    @apply md:px-12 md:py-2.5 px-6 py-1.5 text-white font-semibold text-sm md:text-lg transition-all duration-200 rounded-lg;
+  }
+  .footer__heading {
+    @apply text-lg text-white font-bold mb-4;
+  }
+  .footer__link {
+    @apply text-sm text-white hover:text-green-600 cursor-pointer text-opacity-60 mb-3 w-fit;
+  }
+}
+/* app/globals.css – BEST ONE FOR BRIGHT HORIZON */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #60a5fa, #c4b5fd);
+  border-radius: 6px;
+  border: 3px solid #000;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3b82f6, #a78bfa);
+  background-clip: content-box;
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a78bfa #000;
+}
