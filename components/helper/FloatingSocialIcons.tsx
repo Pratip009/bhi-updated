@@ -88,7 +88,7 @@ export default function FloatingSocialIcons() {
             <div
                 className={`fixed bottom-6 left-6 flex flex-col gap-4 z-50 transition-all duration-300 ${
                     show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
+                } hidden`}
                 style={{ pointerEvents: stopFloating ? "none" : "auto" }}
             >
                 {!stopFloating &&

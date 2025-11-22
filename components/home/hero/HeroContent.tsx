@@ -1,6 +1,9 @@
-import React from 'react';
+"use client";
 
+import React from 'react';
+import { useRouter } from "next/navigation";
 const HeroContent = () => {
+  const router = useRouter();
   return (
     <div className="text-center lg:text-left">
       <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold md:leading-[3rem] lg:leading-[3.5rem] xl:leading-[4rem] text-white'>
@@ -12,8 +15,8 @@ const HeroContent = () => {
       </p>
 
       <div className="flex flex-wrap justify-center md:justify-start items-center gap-8 mt-8">
-        <button className='button__cls bg-green-700 hover:bg-green-900'>Get Started</button>
-        <button className='button__cls bg-yellow-700 hover:bg-yellow-900'>Learn More</button>
+        <button onClick={() => router.push("/course")} className='button__cls bg-green-700 hover:bg-green-900'>Get Started</button>
+        <button onClick={() => router.push("/about")} className='button__cls bg-yellow-700 hover:bg-yellow-900'>Learn More</button>
       </div>
 
       <div className="flex flex-wrap justify-center md:justify-start items-center gap-8 mt-8">
