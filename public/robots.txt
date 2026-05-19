@@ -1,9 +1,10 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.brighthorizoninstitute.com
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /signin
+Disallow: /signup
 
-# Sitemaps
 Sitemap: https://www.brighthorizoninstitute.com/sitemap.xml
