@@ -1,0 +1,15 @@
+{
+  "name": "Bright Horizon Institute",
+  "short_name": "BHI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#303079",
+  "icons": [
+    {
+      "src": "/favicon-v2.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

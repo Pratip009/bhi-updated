@@ -106,18 +106,12 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 
- icons: {
-  icon: [
-    {
-      url: "/favicon-v2.ico",
-      href: "/favicon-v2.ico",
-    },
-  ],
-  shortcut: ["/favicon-v2.ico"],
-  apple: ["/apple-icon.png"],
+icons: {
+  icon: "/favicon-v2.ico",
+  shortcut: "/favicon-v2.ico",
 },
 
-  manifest: "/site.webmanifest",
+manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
