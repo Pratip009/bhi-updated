@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.brighthorizoninstitute.com
+
+# Sitemaps
+Sitemap: https://www.brighthorizoninstitute.com/sitemap.xml
