@@ -47,7 +47,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://www.brighthorizoninstitute.com"),
 
   title: {
     default: "Bright Horizon Institute",
@@ -106,28 +106,16 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 
-  icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "/icon.png",
-        type: "image/png",
-        sizes: "32x32",
-      },
-    ],
-
-    apple: [
-      {
-        url: "/apple-icon.png",
-        sizes: "180x180",
-      },
-    ],
-
-    shortcut: ["/favicon.ico"],
-  },
+ icons: {
+  icon: [
+    {
+      url: "/favicon-v2.ico",
+      href: "/favicon-v2.ico",
+    },
+  ],
+  shortcut: ["/favicon-v2.ico"],
+  apple: ["/apple-icon.png"],
+},
 
   manifest: "/site.webmanifest",
 };
