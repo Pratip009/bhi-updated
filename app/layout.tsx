@@ -21,6 +21,7 @@ import CookieBanner from "@/components/helper/CookieBanner";
 import { AuthProvider } from "@/lib/AuthContext";
 import AiChat from "@/components/helper/AiChat";
 import DisableScroll from "@/components/DisableScroll";
+import CosmetologyPromo from "@/components/Cosmetologypromo";
 
 // Main font
 const spaceGrotesk = Space_Grotesk({
@@ -166,6 +167,7 @@ export default function RootLayout({
 
           {/* AI Assistant */}
           <AiChat />
+          <CosmetologyPromo />
         </AuthProvider>
       </body>
     </html>
